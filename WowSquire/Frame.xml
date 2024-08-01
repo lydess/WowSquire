@@ -1,0 +1,40 @@
+<Ui xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Frame.lua" />
+	<Font virtual="true" outline="NONE">
+		<Color r="1" g="1" b="1" />
+	</Font>
+	<Scale />
+	<Frame name="Home" inherits="BackdropTemplate">
+		<Size x="250" y="349" />
+		<Anchors>
+			<Anchor x="231" y="-201" point="TOPLEFT" />
+		</Anchors>
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
+		</KeyValues>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString inherits="GameFontNormal" font="Fonts\2002.ttf" text="This is a thrall, big ass green dude swinging a hammer" justifyV="TOP" justifyH="LEFT">
+					<Size x="212" y="192" />
+					<Anchors>
+						<Anchor x="20" y="-28" point="TOPLEFT" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="button_HIDE" inherits="UIPanelButtonTemplate" text="Hide">
+				<Size x="75" y="23" />
+				<Anchors>
+					<Anchor x="157" y="-306" point="TOPLEFT" />
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+	<Button name="eyebutton" inherits="UIPanelButtonTemplate" text="A">
+		<Size x="29" y="23" />
+		<Anchors>
+			<Anchor x="774" y="-324" point="TOPLEFT" />
+		</Anchors>
+	</Button>
+</Ui>
