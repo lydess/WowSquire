@@ -4,5 +4,6 @@
 ## Interface: 80205
 
 Frame.xml
+utils.lua
 WowSquire.lua
 Frame.lua

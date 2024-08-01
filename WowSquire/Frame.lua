@@ -12,23 +12,27 @@ end
 local function whoisDown(self, event)
 	print("working")
 	Home:Show()
+	Home:SetResizable(true)
 	
 
 end
 
 
+
 local function eyeMove(self, event)
 	if UnitExists("target") then
 		local currentFrameLoc = TargetFrame:GetCenter()
+		local val = UnitGUID("target")
+		-- TODO: make responsive to different resolutions
 		eyebutton:Show()
 		eyebutton:ClearAllPoints()
-		-- TODO: make responsive to different resolutions
 		eyebutton:SetPoint("BOTTOMLEFT",TargetFrame, "TOPRIGHT",-25,-25);
-		print("yes")
+		print(getID(val))
 	else
 		eyebutton:Hide()
 		
 	end
+
 
 	
 	
