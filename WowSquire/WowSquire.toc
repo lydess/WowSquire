@@ -7,3 +7,4 @@ Frame.xml
 utils.lua
 WowSquire.lua
 Frame.lua
+DataHandler.lua

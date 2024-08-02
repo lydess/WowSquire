@@ -10,6 +10,9 @@
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="DataHandler.lua">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Docs.txt" />
     <Content Include="Frame.lua">
       <SubType>Code</SubType>

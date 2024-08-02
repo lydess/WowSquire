@@ -1,9 +1,13 @@
 A notepad for ideas aswell as footnotes
+Notes about WOW api weirdness
+- The "Wowsquire.lua" file is an INIT file, its loaded last and will run upon launch before the "player_entered_world" event is fired
+- Lua is 1 indexed, deal with it
 
 MVP notes
 - a window which displays information relevent to the NPC that is currently targeted
 - a hide button for the window to hide it from view
 - a show button that is anchored to the players target frame which shows only when an NPC has data about it
+- a companion Data model app which takes in a Database containing all the actual display information and compresses it into LUA tables which the addon will actualy use (not shipped with the addon)
 
 
 Known issues
@@ -12,3 +16,21 @@ Known issues
 
 Footnotes
 1. Wows events API only has an endpoint for "Changing targets" which fires when you de-target somthing, meaning its imposible to determine without checking that the player indeed has a target, so for the time being this nested if is kinda the only way i can think of without needlless complexity
+
+
+Scratch pads
+
+Datamodeling
+ the basic idea is to create a table which contains all neccesary information for the window to display, that table is indexed with the NPCID of that NPC meaning the game is able to provide the key to search, when the player changes target to the NPC it runs a binary search to determine if that NPCID exists
+ within the wowsquire database, if yes display the eyebutton and layout the table data in a nice and readable way for the player if the eyebutton is selected, if not then display no eye button.
+
+ To make this easy i need to find a database client and system that will make for easy editing since i dont want to just make a basic MYSQL db and smash everything into plaintext boxes, would make corrections and formating realy unscalable. then its a simple task of writing a seperate program that just
+ iterates the DB and spits out a bunch of LUA tables which is what will be given to the addon for proccessing ingame (since i cant ship a DB client within a wow addon)
+
+ To combat the choice paralysis of the model, ill make a prelim model now and keep it lean, adding stuff latter to accomodate the art pass for the addons apperance should be simpler that way
+
+ 
+
+ the model itself
+
+ NPCID(int32, index, notnull, unique)	NPCname(char32)  NPCfaction(char32)  NPClore(String)
