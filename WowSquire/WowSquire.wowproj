@@ -10,6 +10,7 @@
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Docs.txt" />
     <Content Include="Frame.lua">
       <SubType>Code</SubType>
       <DependentUpon>Frame.xml</DependentUpon>

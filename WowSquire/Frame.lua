@@ -19,15 +19,23 @@ end
 
 
 
-local function eyeMove(self, event)
+
+-- Main actor for the target frame button
+
+-- Not a fan of the nested IF, see point 1. in docs for why its like this
+local function targetChangeResponce(self, event)
 	if UnitExists("target") then
-		local currentFrameLoc = TargetFrame:GetCenter()
-		local val = UnitGUID("target")
-		-- TODO: make responsive to different resolutions
-		eyebutton:Show()
-		eyebutton:ClearAllPoints()
-		eyebutton:SetPoint("BOTTOMLEFT",TargetFrame, "TOPRIGHT",-25,-25);
-		print(getID(val))
+		if getIsPlayer() then
+		else
+			local currentFrameLoc = TargetFrame:GetCenter()
+			local val = UnitGUID("target")
+			-- TODO: make responsive to different resolutions
+			eyebutton:Show()
+			eyebutton:ClearAllPoints()
+			eyebutton:SetPoint("BOTTOMLEFT",TargetFrame, "TOPRIGHT",-25,-25);
+			print(getID(val))
+		end
+		
 	else
 		eyebutton:Hide()
 		
@@ -38,6 +46,6 @@ local function eyeMove(self, event)
 	
 end
 
-eyebutton:SetScript("OnEvent",eyeMove)
+eyebutton:SetScript("OnEvent",targetChangeResponce)
 eyebutton:SetScript("OnClick",whoisDown)
 button_HIDE:SetScript("OnClick", down)

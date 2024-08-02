@@ -12,3 +12,10 @@ function getID(input)
 	return parts[6]
 	
 end
+-- Determine if current target is a player
+function getIsPlayer()
+	if UnitExists("target") then
+	local val = UnitGUID("target")
+	return getID(val) == nil
+	end
+end

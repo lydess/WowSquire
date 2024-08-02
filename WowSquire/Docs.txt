@@ -1,0 +1,14 @@
+A notepad for ideas aswell as footnotes
+
+MVP notes
+- a window which displays information relevent to the NPC that is currently targeted
+- a hide button for the window to hide it from view
+- a show button that is anchored to the players target frame which shows only when an NPC has data about it
+
+
+Known issues
+1. the eyebutton shows up on inital login, i cant set it as initialy hidden becuase the stupid API will try to index it and find a nil value, ill need to find some frame that can be shown at launch, attaach some logic to it and then set it as hidden
+
+
+Footnotes
+1. Wows events API only has an endpoint for "Changing targets" which fires when you de-target somthing, meaning its imposible to determine without checking that the player indeed has a target, so for the time being this nested if is kinda the only way i can think of without needlless complexity

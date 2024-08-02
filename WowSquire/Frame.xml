@@ -4,7 +4,7 @@
 		<Color r="1" g="1" b="1" />
 	</Font>
 	<Scale />
-	<Frame name="Home" inherits="BackdropTemplate" resizable="true">
+	<Frame name="Home" inherits="BackdropTemplate" hidden="true" resizable="true">
 		<Size x="250" y="349" />
 		<Anchors>
 			<Anchor x="231" y="-201" point="TOPLEFT" />
