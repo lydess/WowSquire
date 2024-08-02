@@ -3,8 +3,8 @@
 ## Author: light
 ## Interface: 80205
 
-Frame.xml
-utils.lua
-WowSquire.lua
-Frame.lua
+LoreFrame.xml
+Utils.lua
+LoreFrame.lua
 DataHandler.lua
+WowSquire.lua

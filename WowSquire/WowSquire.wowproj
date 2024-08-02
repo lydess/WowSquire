@@ -14,11 +14,18 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Docs.txt" />
-    <Content Include="Frame.lua">
+    <Content Include="LoreFrame.lua">
       <SubType>Code</SubType>
-      <DependentUpon>Frame.xml</DependentUpon>
+      <DependentUpon>LoreFrame.xml</DependentUpon>
     </Content>
-    <Content Include="utils.lua">
+    <Content Include="Frame1.lua">
+      <SubType>Code</SubType>
+      <DependentUpon>Frame1.xml</DependentUpon>
+    </Content>
+    <Content Include="Frame1.xml">
+      <SubType>Frame</SubType>
+    </Content>
+    <Content Include="Utils.lua">
       <SubType>Code</SubType>
     </Content>
     <Content Include="WowSquire.lua">
@@ -27,7 +34,7 @@
     <Content Include="WowSquire.toc">
       <SubType>TableOfContents</SubType>
     </Content>
-    <Content Include="Frame.xml">
+    <Content Include="LoreFrame.xml">
       <SubType>Frame</SubType>
     </Content>
   </ItemGroup>

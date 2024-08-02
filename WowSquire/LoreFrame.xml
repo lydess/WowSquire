@@ -1,10 +1,10 @@
 <Ui xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.blizzard.com/wow/ui/">
-	<Script file="Frame.lua" />
+	<Script file="LoreFrame.lua" />
 	<Font virtual="true" outline="NONE">
 		<Color r="1" g="1" b="1" />
 	</Font>
 	<Scale />
-	<Frame name="Home" inherits="BackdropTemplate" hidden="true" resizable="true">
+	<Frame name="panel_lore" inherits="BackdropTemplate" hidden="true" resizable="true">
 		<Size x="250" y="349" />
 		<Anchors>
 			<Anchor x="231" y="-201" point="TOPLEFT" />
@@ -23,7 +23,7 @@
 			</Layer>
 		</Layers>
 		<Frames>
-			<Button name="button_HIDE" inherits="UIPanelButtonTemplate" text="Hide">
+			<Button name="button_lorehide" inherits="UIPanelButtonTemplate" text="Hide">
 				<Size x="75" y="23" />
 				<Anchors>
 					<Anchor x="157" y="-306" point="TOPLEFT" />
@@ -31,10 +31,10 @@
 			</Button>
 		</Frames>
 	</Frame>
-	<Button name="eyebutton" inherits="UIPanelButtonTemplate" text="A">
-		<Size x="29" y="23" />
+	<Button name="button_loreshow" inherits="UIPanelButtonTemplate" text="Button1">
+		<Size x="75" y="23" />
 		<Anchors>
-			<Anchor x="774" y="-324" point="TOPLEFT" />
+			<Anchor x="686" y="-387" point="TOPLEFT" />
 		</Anchors>
 	</Button>
 </Ui>
