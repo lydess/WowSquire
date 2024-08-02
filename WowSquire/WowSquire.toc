@@ -2,9 +2,8 @@
 ## Version: 1.0
 ## Author: light
 ## Interface: 80205
-
+Debug\Datamodel.lua
+DataHandler.lua
 LoreFrame.xml
 Utils.lua
-DataHandler.lua
 WowSquire.lua
-Debug\Datamodel.lua

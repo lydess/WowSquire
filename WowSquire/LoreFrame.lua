@@ -1,6 +1,7 @@
 -- Main actor for the target frame button and the Lore panel
-local function ChangeText()
-
+local function ChangeText(newtext)
+	text_loretext:SetText(newtext)
+	
 end
 Loreframe = {
 onTargetChange = function(self, event)
@@ -9,7 +10,11 @@ onTargetChange = function(self, event)
 		if UnitIsPlayer("target") then
 			button_loreshow:Hide()
 		else
-			local val = UnitGUID("target")
+			
+			local val = WSutils.getID(UnitGUID("target"))
+			local tabledata = DataHandler.checkExists(val)
+			print(tabledata[1])
+			ChangeText(tostring(tabledata[1]))
 			-- TODO: make responsive to different resolutions
 			button_loreshow:Show()
 			button_loreshow:ClearAllPoints()

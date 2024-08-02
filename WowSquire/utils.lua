@@ -1,4 +1,4 @@
--- convert GUID to NPC dataabase ID
+-- convert GUID to NPC dataabase ID and returns as number
 
 WSutils = {
 getID = function (input)
@@ -6,6 +6,6 @@ getID = function (input)
     for part in string.gmatch(input, "([^%-]+)") do
         table.insert(parts, part)
     end
-	return parts[6]
+	return tonumber(parts[6])
 end
 }
