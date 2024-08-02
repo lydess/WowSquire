@@ -32,7 +32,3 @@ local function targetChangeResponce(self, event)
 	
 end
 
-button_loreshow:RegisterEvent("PLAYER_TARGET_CHANGED")
-button_loreshow:SetScript("OnEvent",targetChangeResponce)
-button_loreshow:SetScript("OnClick",showDown)
-button_lorehide:SetScript("OnClick",hideDown)

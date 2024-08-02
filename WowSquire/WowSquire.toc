@@ -5,6 +5,6 @@
 
 LoreFrame.xml
 Utils.lua
-LoreFrame.lua
 DataHandler.lua
 WowSquire.lua
+Debug\Datamodel.lua

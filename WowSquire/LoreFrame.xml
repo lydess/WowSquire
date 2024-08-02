@@ -12,16 +12,6 @@
 		<KeyValues>
 			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
 		</KeyValues>
-		<Layers>
-			<Layer level="OVERLAY">
-				<FontString inherits="GameFontNormal" font="Fonts\2002.ttf" text="This is a thrall, big ass green dude swinging a hammer" justifyV="TOP" justifyH="LEFT">
-					<Size x="212" y="192" />
-					<Anchors>
-						<Anchor x="20" y="-28" point="TOPLEFT" />
-					</Anchors>
-				</FontString>
-			</Layer>
-		</Layers>
 		<Frames>
 			<Button name="button_lorehide" inherits="UIPanelButtonTemplate" text="Hide">
 				<Size x="75" y="23" />

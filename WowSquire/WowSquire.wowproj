@@ -13,6 +13,9 @@
     <Content Include="DataHandler.lua">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Debug\Datamodel.lua">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Docs.txt" />
     <Content Include="LoreFrame.lua">
       <SubType>Code</SubType>
@@ -37,6 +40,9 @@
     <Content Include="LoreFrame.xml">
       <SubType>Frame</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Debug" />
   </ItemGroup>
   <Import Project="$(DevEnvDir)\Extensions\Tools\MSBuild\AddonStudio\Wow\3.0\WowAddonStudio.targets" />
   <!--
