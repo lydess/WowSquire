@@ -35,13 +35,13 @@ showPannel = function (self, event)
 end,
 panelResizeStart = function (self, event)
 	print("sizing start")
-	panel_lore:StartSizing("BOTTOMLEFT")
+	--panel_lore:StartSizing("BOTTOMLEFT")
 	
 end,
 panelResizeStop = function (self, event)
 	print("sizing stop")
 	panel_lore:StopMovingOrSizing()
-	
+	button_lorehide:StopMovingOrSizing()
 end,
 onLogin = function ()
 	button_loreshow:Hide()

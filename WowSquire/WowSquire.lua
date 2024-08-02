@@ -8,3 +8,4 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent", onload)
 -- run init commands for each frame
 Loreframe.onLogin()
+DataHandler.checkExists()

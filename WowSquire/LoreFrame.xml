@@ -5,61 +5,68 @@
 	</Font>
 	<Scale />
 	<Scale />
-	<Frame name="panel_lore" inherits="BackdropTemplate" hidden="true" clipChildren="true">
-		<Size x="250" y="349" />
+	<Frame name="panel_lore" inherits="BackdropTemplate" hidden="true">
+		<Size x="251" y="343" />
 		<Anchors>
-			<Anchor x="250" y="-248" point="TOPLEFT" />
+			<Anchor x="249" y="-248" point="TOPLEFT" />
 		</Anchors>
-		<KeyValues>
-			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
-		</KeyValues>
 		<HitRectInsets left="6" right="6" top="6" bottom="6" />
 		<Layers>
+			<Layer>
+				<Texture file="Interface\Legionfall\Legionfall" atlas="Legionfall_Background">
+					<Size x="64" y="64" />
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="panel_lore" relativePoint="TOPLEFT" />
+						<Anchor point="BOTTOMRIGHT" relativeTo="panel_lore" relativePoint="BOTTOMRIGHT" />
+					</Anchors>
+				</Texture>
+			</Layer>
 			<Layer level="OVERLAY">
 				<FontString name="text_loretext" inherits="GameFontNormal" text="FontString1" justifyH="LEFT">
 					<Size x="144" y="20" />
 					<Anchors>
-						<Anchor x="88" y="-24" point="TOPLEFT" />
+						<Anchor x="87" y="-44" point="TOPLEFT" />
 					</Anchors>
 				</FontString>
 				<FontString name="text_loredetail" inherits="GameFontNormal" text="FontString1" justifyV="TOP" justifyH="LEFT">
-					<Size x="213" y="186" />
+					<Size x="197" y="216" />
 					<Anchors>
-						<Anchor x="19" y="-73" point="TOPLEFT" />
+						<Anchor x="17" y="-93" point="TOPLEFT" />
 					</Anchors>
 				</FontString>
 			</Layer>
 		</Layers>
 		<Frames>
-			<Frame name="frame_buttonContainer">
-				<Size x="92" y="48" />
+			<Button name="button_expand" inherits="UIPanelButtonTemplate" text="">
+				<Size x="16" y="16" />
 				<Anchors>
-					<Anchor x="155" y="-3" point="TOPLEFT" />
+					<Anchor x="198" y="-15" point="TOPLEFT" />
 				</Anchors>
-				<KeyValues>
-					<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
-				</KeyValues>
-				<Frames>
-					<Button name="button_lorehide" inherits="UIPanelCloseButton" text="Hide">
-						<Size x="22" y="22" />
-						<Anchors>
-							<Anchor x="49" y="-13" point="TOPLEFT" />
-						</Anchors>
-					</Button>
-					<Button name="button_resize" inherits="UIPanelInfoButton" text="Hide">
-						<Size x="22" y="22" />
-						<Anchors>
-							<Anchor x="15" y="-13" point="TOPLEFT" />
-						</Anchors>
-					</Button>
-				</Frames>
-			</Frame>
+				<Backdrop bgFile="Interface\BankFrame\Bank-Background" />
+				<NormalTexture file="Interface\buttons\redbuttons" atlas="redbutton-expand" />
+				<PushedTexture file="" atlas="redbutton-expand-pressed" />
+			</Button>
+			<Button name="button_lorehide" inherits="UIPanelCloseButton" text="Hide">
+				<Size x="16" y="16" />
+				<Anchors>
+					<Anchor x="220" y="-15" point="TOPLEFT" />
+				</Anchors>
+			</Button>
 		</Frames>
 	</Frame>
 	<Button name="button_loreshow" inherits="UIPanelButtonTemplate" text="Button1">
-		<Size x="75" y="23" />
+		<Size x="54" y="24" />
 		<Anchors>
-			<Anchor x="686" y="-387" point="TOPLEFT" />
+			<Anchor x="42" y="-33" point="TOPLEFT" />
 		</Anchors>
 	</Button>
+	<Frame inherits="BackdropTemplate">
+		<Size x="416" y="445" />
+		<Anchors>
+			<Anchor x="244" y="-153" point="TOPLEFT" />
+		</Anchors>
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
+		</KeyValues>
+	</Frame>
 </Ui>
