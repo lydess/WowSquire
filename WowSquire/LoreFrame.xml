@@ -12,6 +12,16 @@
 		<KeyValues>
 			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
 		</KeyValues>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="text_loretext" inherits="GameFontNormal" text="FontString1">
+					<Size x="80" y="20" />
+					<Anchors>
+						<Anchor x="88" y="-70" point="TOPLEFT" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
 		<Frames>
 			<Button name="button_lorehide" inherits="UIPanelButtonTemplate" text="Hide">
 				<Size x="75" y="23" />

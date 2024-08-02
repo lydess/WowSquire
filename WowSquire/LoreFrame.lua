@@ -1,5 +1,7 @@
 -- Main actor for the target frame button and the Lore panel
+local function ChangeText()
 
+end
 Loreframe = {
 onTargetChange = function(self, event)
 	-- Not a fan of the nested IF, see point 1. in docs for why its like this
@@ -19,12 +21,18 @@ onTargetChange = function(self, event)
 end,
 hidePannel = function (self, event)
 	panel_lore:Hide()
+	
 end,
 showPannel = function (self, event)
    panel_lore:Show()
 end,
 onLogin = function ()
    button_loreshow:Hide()
+	button_loreshow:RegisterEvent("PLAYER_TARGET_CHANGED")
+	button_loreshow:SetScript("OnEvent",Loreframe.onTargetChange)
+	button_loreshow:SetScript("OnClick",Loreframe.showPannel)
+	button_lorehide:SetScript("OnClick",Loreframe.hidePannel)
+	
 end
-
 }
+

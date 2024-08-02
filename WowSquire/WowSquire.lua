@@ -1,11 +1,10 @@
+-- temporary frame at startup to run INIT commands off of
 local f = CreateFrame("Frame")
 local function onload()
-	print("hello player")
-	button_loreshow:RegisterEvent("PLAYER_TARGET_CHANGED")
-	button_loreshow:SetScript("OnEvent",Loreframe.onTargetChange)
-	button_loreshow:SetScript("OnClick",Loreframe.showPannel)
-	button_lorehide:SetScript("OnClick",Loreframe.hidePannel)
+	print("Im gay and alive!")
+
 end
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent", onload)
+-- run init commands for each frame
 Loreframe.onLogin()
