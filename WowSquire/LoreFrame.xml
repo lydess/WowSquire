@@ -4,31 +4,56 @@
 		<Color r="1" g="1" b="1" />
 	</Font>
 	<Scale />
-	<Frame name="panel_lore" inherits="BackdropTemplate" hidden="true" resizable="true">
+	<Scale />
+	<Frame name="panel_lore" inherits="BackdropTemplate" hidden="true" clipChildren="true">
 		<Size x="250" y="349" />
 		<Anchors>
-			<Anchor x="231" y="-201" point="TOPLEFT" />
+			<Anchor x="250" y="-248" point="TOPLEFT" />
 		</Anchors>
 		<KeyValues>
 			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
 		</KeyValues>
+		<HitRectInsets left="6" right="6" top="6" bottom="6" />
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="text_loretext" inherits="GameFontNormal" text="FontString1">
-					<Size x="80" y="20" />
+				<FontString name="text_loretext" inherits="GameFontNormal" text="FontString1" justifyH="LEFT">
+					<Size x="144" y="20" />
 					<Anchors>
-						<Anchor x="88" y="-70" point="TOPLEFT" />
+						<Anchor x="88" y="-24" point="TOPLEFT" />
+					</Anchors>
+				</FontString>
+				<FontString name="text_loredetail" inherits="GameFontNormal" text="FontString1" justifyV="TOP" justifyH="LEFT">
+					<Size x="213" y="186" />
+					<Anchors>
+						<Anchor x="19" y="-73" point="TOPLEFT" />
 					</Anchors>
 				</FontString>
 			</Layer>
 		</Layers>
 		<Frames>
-			<Button name="button_lorehide" inherits="UIPanelButtonTemplate" text="Hide">
-				<Size x="75" y="23" />
+			<Frame name="frame_buttonContainer">
+				<Size x="92" y="48" />
 				<Anchors>
-					<Anchor x="157" y="-306" point="TOPLEFT" />
+					<Anchor x="155" y="-3" point="TOPLEFT" />
 				</Anchors>
-			</Button>
+				<KeyValues>
+					<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
+				</KeyValues>
+				<Frames>
+					<Button name="button_lorehide" inherits="UIPanelCloseButton" text="Hide">
+						<Size x="22" y="22" />
+						<Anchors>
+							<Anchor x="49" y="-13" point="TOPLEFT" />
+						</Anchors>
+					</Button>
+					<Button name="button_resize" inherits="UIPanelInfoButton" text="Hide">
+						<Size x="22" y="22" />
+						<Anchors>
+							<Anchor x="15" y="-13" point="TOPLEFT" />
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
 		</Frames>
 	</Frame>
 	<Button name="button_loreshow" inherits="UIPanelButtonTemplate" text="Button1">

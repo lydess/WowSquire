@@ -1,7 +1,15 @@
 -- Main actor for the target frame button and the Lore panel
-local function ChangeText(newtext)
-	text_loretext:SetText(newtext)
-	
+local function moveShowButton()
+	button_loreshow:Show()
+	button_loreshow:ClearAllPoints()
+	button_loreshow:SetPoint("BOTTOMLEFT",TargetFrame, "TOPRIGHT",-25,-25);
+end
+
+local function buildLorePanel()
+	local val = WSutils.getID(UnitGUID("target"))
+	local tabledata = DataHandler.checkExists(val)
+	text_loretext:SetText(tostring(tabledata[2]))
+	text_loredetail:SetText(tostring(tabledata[4]))
 end
 Loreframe = {
 onTargetChange = function(self, event)
@@ -10,15 +18,9 @@ onTargetChange = function(self, event)
 		if UnitIsPlayer("target") then
 			button_loreshow:Hide()
 		else
-			
-			local val = WSutils.getID(UnitGUID("target"))
-			local tabledata = DataHandler.checkExists(val)
-			print(tabledata[1])
-			ChangeText(tostring(tabledata[1]))
+			buildLorePanel()
+			moveShowButton()
 			-- TODO: make responsive to different resolutions
-			button_loreshow:Show()
-			button_loreshow:ClearAllPoints()
-			button_loreshow:SetPoint("BOTTOMLEFT",TargetFrame, "TOPRIGHT",-25,-25);
 		end
 	else
 		button_loreshow:Hide()
@@ -31,13 +33,30 @@ end,
 showPannel = function (self, event)
    panel_lore:Show()
 end,
+panelResizeStart = function (self, event)
+	print("sizing start")
+	panel_lore:StartSizing("BOTTOMLEFT")
+	
+end,
+panelResizeStop = function (self, event)
+	print("sizing stop")
+	panel_lore:StopMovingOrSizing()
+	
+end,
 onLogin = function ()
-   button_loreshow:Hide()
+	button_loreshow:Hide()
 	button_loreshow:RegisterEvent("PLAYER_TARGET_CHANGED")
 	button_loreshow:SetScript("OnEvent",Loreframe.onTargetChange)
 	button_loreshow:SetScript("OnClick",Loreframe.showPannel)
 	button_lorehide:SetScript("OnClick",Loreframe.hidePannel)
+	button_lorehide:SetMovable(true)
+	panel_lore:RegisterForDrag("LeftButton")
+	panel_lore:EnableMouse(true)
+	panel_lore:SetResizable(true)
+	--panel_lore:SetMinResize(300,200)
+	--panel_lore:SetMaxResize(800,500)
+	panel_lore:SetScript("OnDragStart", Loreframe.panelResizeStart)
+	panel_lore:SetScript("OnDragStop", Loreframe.panelResizeStop)
 	
 end
 }
-
